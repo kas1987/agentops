@@ -39,9 +39,15 @@
   ],
   "externalMarketplaces": [
     {
-      "name": "aitmpl",
+      "name": "aitmpl-agents",
       "source": "https://www.aitmpl.com/agents",
-      "description": "AI Template Marketplace - 63+ plugins, 85+ agents, curated collection",
+      "description": "AI Template Marketplace - Agents collection (63+ plugins, 85+ agents)",
+      "recommended": true
+    },
+    {
+      "name": "aitmpl-plugins",
+      "source": "https://www.aitmpl.com/plugins",
+      "description": "AI Template Marketplace - Plugins collection (comprehensive catalog)",
       "recommended": true
     },
     {
