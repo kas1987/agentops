@@ -191,5 +191,6 @@ None - this is the foundational plugin.
 
 ## Links
 
-- [12-Factor AgentOps](https://github.com/boshu2/12-factor-agentops)
-- [Laws of an Agent](https://github.com/boshu2/12-factor-agentops)
+- [12-Factor AgentOps Framework](https://github.com/boshu2/12-factor-agentops)
+- [Laws of an Agent](https://github.com/boshu2/12-factor-agentops#laws-of-an-agent)
+- [Constitutional Guardrails (Factor XI)](https://github.com/boshu2/12-factor-agentops#xi-constitutional-guardrails)

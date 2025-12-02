@@ -10,8 +10,18 @@
     "npm": "@boshu2/vibe-check"
   },
   "components": {
-    "commands": 3,
-    "skills": 3,
-    "agents": 1
+    "agents": [
+      "agents/vibe-assessor.md"
+    ],
+    "commands": [
+      "commands/vibe-check.md",
+      "commands/vibe-level.md",
+      "commands/vibe-retro.md"
+    ],
+    "skills": [
+      "skills/tracer-test.md",
+      "skills/vibe-check.md",
+      "skills/vibe-level.md"
+    ]
   }
 }

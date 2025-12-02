@@ -204,5 +204,6 @@ Single command that:
 
 ## Links
 
-- [12-Factor AgentOps](https://github.com/boshu2/12-factor-agentops)
-- [Factor VI: Session Continuity](https://github.com/boshu2/12-factor-agentops)
+- [12-Factor AgentOps Framework](https://github.com/boshu2/12-factor-agentops)
+- [Factor VI: Session Continuity](https://github.com/boshu2/12-factor-agentops#vi-session-continuity)
+- [Context Bundling Guide](https://github.com/boshu2/12-factor-agentops#context-bundling)
