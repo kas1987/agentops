@@ -91,12 +91,26 @@ Track state across sessions:
       "date": "2025-11-30",
       "summary": "Research complete. JWT + Redis pattern identified.",
       "commits": 3,
-      "duration_minutes": 45
+      "duration_minutes": 45,
+      "vibe_level": 3,
+      "metrics": {
+        "trust_pass_rate": 92,
+        "rework_ratio": 15,
+        "iteration_velocity": 4.2,
+        "flow_efficiency": 85
+      },
+      "retro": {
+        "failure_patterns_hit": [],
+        "failure_patterns_avoided": ["Debug Spiral", "Context Amnesia"],
+        "learnings": ["Test-first prevented spirals"]
+      }
     }
   ],
   "resume_summary": "Ready for implementation. Start with token model in src/models/token.ts"
 }
 ```
+
+**Session metrics are captured automatically** via `vibe-check session end` when you run `/session-end`.
 
 ---
 
@@ -201,6 +215,26 @@ Single command that:
 ## Dependencies
 
 - `core-workflow` plugin (required base)
+- `@boshu2/vibe-check` npm package (required for session metrics)
+
+### Installing vibe-check
+
+```bash
+# Global installation (recommended)
+npm install -g @boshu2/vibe-check
+
+# Or run directly with npx
+npx @boshu2/vibe-check --help
+```
+
+### vibe-check Commands Used
+
+| Command | When | Purpose |
+|---------|------|---------|
+| `vibe-check session start` | `/session-start` | Capture baseline metrics |
+| `vibe-check session end` | `/session-end` | Get session metrics + failure patterns |
+| `vibe-check --since` | Analysis | View metrics for time period |
+| `vibe-check profile` | Anytime | View XP, streaks, achievements |
 
 ## Links
 
