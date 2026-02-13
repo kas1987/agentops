@@ -1,10 +1,11 @@
 ---
-date: 2025-12-30
-type: Learning
-topic: "Progressive Documentation for AI Tools"
+id: learn-2025-12-30-progressive-documentation
+type: learning
+created_at: "2025-12-30T00:00:00Z"
+category: process
+confidence: high
 source: "agentops-3eo"
 tags: [learning, education, documentation, kelsey-hightower]
-status: COMPLETE
 ---
 
 # Learning: Progressive Documentation for AI Tools
