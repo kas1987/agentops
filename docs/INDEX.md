@@ -138,6 +138,7 @@
 - [Learnings Quality Checklist](learnings/CHECKLIST.md) — Quality gate for source-backed, actionable notes
 - [Job Market Split: Production to Specification Bottleneck](learnings/job-market-split-specification-bottleneck.md) — Why specification skill compounds as the core differentiator
 - [Codex 5.3 vs Opus 4.6: Two Agent Philosophies](learnings/codex-53-vs-opus-46-two-agent-philosophies.md) — Delegation vs coordination and workflow-fit decision framework
+- [Escape the Application Pile: Own Your Interface Layer](learnings/escape-the-application-pile-own-interface-layer.md) — Interface ownership strategy for hiring attention bottlenecks
 
 ## Templates
 
