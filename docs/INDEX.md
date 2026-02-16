@@ -132,6 +132,12 @@
 - [Validated Release Pipeline](plans/2026-01-28-validated-release-pipeline.md) — Release pipeline design (2026-01-28)
 - [AO-Olympus Bridge Next Steps](plans/2026-02-13-ao-olympus-bridge-next-steps.md) — Follow-up work to make the AO↔OL bridge enforceable (2026-02-13)
 
+## Learnings
+
+- [Learnings Index](learnings/README.md) — Curated learnings from videos and external analysis
+- [Job Market Split: Production to Specification Bottleneck](learnings/job-market-split-specification-bottleneck.md) — Why specification skill compounds as the core differentiator
+- [Codex 5.3 vs Opus 4.6: Two Agent Philosophies](learnings/codex-53-vs-opus-46-two-agent-philosophies.md) — Delegation vs coordination and workflow-fit decision framework
+
 ## Templates
 
 - [Workflow Template](templates/workflow.template.md) — Template for new workflows
