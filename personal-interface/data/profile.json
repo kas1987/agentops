@@ -1,0 +1,52 @@
+{
+  "name": "Kris S",
+  "headline": "Add your LinkedIn headline here",
+  "location": "Add location",
+  "email": "optional@email.com",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/kris-s-b8a5869/",
+    "portfolio": "",
+    "github": ""
+  },
+  "summary": "Paste a concise professional summary here.",
+  "domainFocus": [
+    "platform",
+    "ai workflows",
+    "automation"
+  ],
+  "skills": [
+    "python",
+    "sql",
+    "prompt engineering",
+    "project management",
+    "data analysis"
+  ],
+  "strengths": [
+    "List 3-5 proven strengths",
+    "Evidence-backed delivery",
+    "Cross-functional communication"
+  ],
+  "knownGaps": [
+    "List honest gaps you want to disclose"
+  ],
+  "experience": [
+    {
+      "title": "Role Title",
+      "company": "Company",
+      "period": "YYYY-YYYY",
+      "highlights": [
+        "Outcome with metric",
+        "System/process built",
+        "Complex problem solved"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project name",
+      "description": "What it does",
+      "impact": "Measured impact",
+      "stack": ["tool1", "tool2"]
+    }
+  ]
+}

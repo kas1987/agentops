@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Interface Toolkit</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 980px; }
+    h1, h2 { margin-bottom: 8px; }
+    .muted { color: #555; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    textarea { width: 100%; min-height: 160px; padding: 8px; }
+    input, button { padding: 8px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+    .pill { display: inline-block; border: 1px solid #ccc; border-radius: 999px; padding: 4px 10px; margin: 4px 4px 0 0; font-size: 12px; }
+    .v-strong { color: #0f5132; font-weight: bold; }
+    .v-convo { color: #664d03; font-weight: bold; }
+    .v-no { color: #842029; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Personal Interface Toolkit</h1>
+  <p class="muted">Local MVP for profile exploration + job-description fit analysis.</p>
+
+  <div class="card">
+    <h2>Profile</h2>
+    <div id="profile"></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Ask Profile</h2>
+      <input id="question" placeholder="Ask about skills, projects, experience" style="width:100%" />
+      <button onclick="answerQuestion()">Answer</button>
+      <p id="answer" class="muted"></p>
+    </div>
+
+    <div class="card">
+      <h2>JD Fit Analyzer</h2>
+      <textarea id="jd" placeholder="Paste job description"></textarea>
+      <button onclick="analyzeFit()">Analyze Fit</button>
+      <div id="fit"></div>
+    </div>
+  </div>
+
+  <script>
+    let profile = null;
+
+    function norm(text) {
+      return (text || '').toLowerCase();
+    }
+
+    function uniq(arr) {
+      return [...new Set(arr)];
+    }
+
+    function tokenize(text) {
+      return norm(text)
+        .replace(/[^a-z0-9+.# ]/g, ' ')
+        .split(/\s+/)
+        .filter(Boolean);
+    }
+
+    async function loadProfile() {
+      const res = await fetch('../data/profile.json');
+      profile = await res.json();
+      const html = `
+        <p><strong>${profile.name}</strong> — ${profile.headline}</p>
+        <p>${profile.summary}</p>
+        <div>${(profile.skills || []).map(s => `<span class="pill">${s}</span>`).join('')}</div>
+      `;
+      document.getElementById('profile').innerHTML = html;
+    }
+
+    function answerQuestion() {
+      const q = norm(document.getElementById('question').value);
+      if (!q || !profile) return;
+
+      const hits = [];
+
+      for (const skill of (profile.skills || [])) {
+        if (q.includes(norm(skill))) hits.push(`Skill match: ${skill}`);
+      }
+
+      for (const exp of (profile.experience || [])) {
+        if (q.includes(norm(exp.title)) || q.includes(norm(exp.company))) {
+          hits.push(`${exp.title} at ${exp.company}: ${(exp.highlights || []).join('; ')}`);
+        }
+      }
+
+      for (const project of (profile.projects || [])) {
+        if (q.includes(norm(project.name)) || q.includes(norm(project.description))) {
+          hits.push(`${project.name}: ${project.impact}`);
+        }
+      }
+
+      if (hits.length === 0) {
+        document.getElementById('answer').innerText =
+          'No direct match found. Try asking about specific skills, roles, companies, or projects from your profile.';
+        return;
+      }
+
+      document.getElementById('answer').innerText = uniq(hits).slice(0, 5).join(' | ');
+    }
+
+    function analyzeFit() {
+      const jd = document.getElementById('jd').value || '';
+      const jdTokens = tokenize(jd);
+
+      const skillSet = new Set((profile.skills || []).map(norm));
+      const domainSet = new Set((profile.domainFocus || []).map(norm));
+      const gapSet = new Set((profile.knownGaps || []).map(norm));
+
+      let score = 0;
+      const strengths = [];
+      const gaps = [];
+
+      const jdText = norm(jd);
+
+      for (const skill of skillSet) {
+        if (jdText.includes(skill)) {
+          score += 7;
+          strengths.push(skill);
+        }
+      }
+
+      for (const domain of domainSet) {
+        if (jdText.includes(domain)) {
+          score += 10;
+          strengths.push(`domain:${domain}`);
+        }
+      }
+
+      for (const gap of gapSet) {
+        if (jdText.includes(gap)) {
+          score -= 12;
+          gaps.push(gap);
+        }
+      }
+
+      const mustHaveSignals = ['required', 'must have', 'minimum qualifications'];
+      const hasStrictReq = mustHaveSignals.some(s => jdText.includes(s));
+      if (hasStrictReq && strengths.length < 3) score -= 10;
+
+      score = Math.max(0, Math.min(100, score));
+
+      let verdict = 'probably not';
+      let verdictClass = 'v-no';
+      let action = 'do not proceed';
+
+      if (score >= 80) {
+        verdict = 'strong fit';
+        verdictClass = 'v-strong';
+        action = 'apply';
+      } else if (score >= 55) {
+        verdict = 'worth conversation';
+        verdictClass = 'v-convo';
+        action = 'intro call only';
+      }
+
+      const confidence = strengths.length >= 4 ? 'high' : strengths.length >= 2 ? 'medium' : 'low';
+
+      document.getElementById('fit').innerHTML = `
+        <p>Score: <strong>${score}</strong></p>
+        <p>Verdict: <span class="${verdictClass}">${verdict}</span></p>
+        <p>Confidence: <strong>${confidence}</strong></p>
+        <p>Recommended action: <strong>${action}</strong></p>
+        <p><strong>Strength signals:</strong> ${uniq(strengths).slice(0, 8).join(', ') || 'none detected'}</p>
+        <p><strong>Gap signals:</strong> ${uniq(gaps).slice(0, 8).join(', ') || 'none detected'}</p>
+      `;
+    }
+
+    loadProfile();
+  </script>
+</body>
+</html>
