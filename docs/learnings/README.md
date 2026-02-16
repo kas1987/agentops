@@ -1,5 +1,7 @@
 # Learnings
 
+[![Validate Learnings](https://github.com/kas1987/agentops/actions/workflows/validate-learnings.yml/badge.svg)](https://github.com/kas1987/agentops/actions/workflows/validate-learnings.yml)
+
 Curated learnings captured from external research, videos, and long-form analysis.
 
 ## Standards
