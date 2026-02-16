@@ -12,6 +12,7 @@
 [![Version](https://img.shields.io/badge/version-2.9.0-brightgreen)](CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/skills-36-7c3aed)](skills/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Validate Learnings](https://github.com/kas1987/agentops/actions/workflows/validate-learnings.yml/badge.svg)](https://github.com/kas1987/agentops/actions/workflows/validate-learnings.yml)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://github.com/anthropics/claude-code)
 
 [See It Work](#see-it-work) · [Install](#install) · [The Workflow](#the-workflow) · [The Flywheel](#the-flywheel) · [Skills](#skills) · [CLI](#the-ao-cli) · [FAQ](#faq)
