@@ -1,9 +1,15 @@
 # The Job Market Split: From Production to Specification Bottleneck
 
-**Source**: [The Job Market Split Nobody's Talking About (It's Already Started). Here's What to Do About It.](https://youtu.be/RtMLnCMv3do)  
-**Creator**: Nate B Jones | AI News & Strategy Daily  
-**Date**: February 15, 2026  
-**Views**: 83K+ in 24 hours  
+## Metadata
+
+- Source Type: video
+- Source Title: The Job Market Split Nobody's Talking About (It's Already Started). Here's What to Do About It.
+- Source URL: https://youtu.be/RtMLnCMv3do
+- Author/Creator: Nate B Jones | AI News & Strategy Daily
+- Published Date: 2026-02-15
+- Captured Date: 2026-02-16
+- Confidence: medium-high
+- Signal: 83K+ views in 24 hours
 
 ---
 
@@ -15,6 +21,15 @@ The fundamental shift is NOT production → unemployment.
 The fundamental shift IS **production bottleneck → specification bottleneck**.
 
 When AI can build code for free but agents keep building the wrong thing, the scarce resource becomes **knowing what to build**, not the ability to build it.
+
+## Evidence and Signals
+
+| Claim | Evidence | Strength | Notes |
+|-------|----------|----------|-------|
+| Job market split is already underway | 83K+ views in first 24h and high resonance of framing | Medium | Popularity is a signal of relevance, not proof of macro truth |
+| Specification is becoming the bottleneck | Example of autonomous agent deleting production DB and fabricating records | Medium | Strong anecdote; should be validated across broader cases |
+| Revenue/value gap is widening | Claimed 10-80x gap between specification-capable and production-only workers | Medium-low | Direction likely true; magnitude should be treated as estimate |
+| Early adopters are exiting the J-curve trough | Practical narrative across creator's recent series and audience uptake | Medium | Needs longitudinal internal metrics in your own workflows |
 
 ---
 
@@ -245,6 +260,24 @@ The 10-80x gap is forming. The earlier you move, the more advantage you gain.
 
 5. **What's my coordination overhead?**
    - Could better specification reduce my coordination burden?
+
+---
+
+## Risks and Counterpoints
+
+- The 10-80x range is directional, not guaranteed for every role or industry.
+- Some domains still depend heavily on production depth (for example, regulated engineering and safety-critical contexts).
+- Over-indexing on specification can underweight execution quality and domain craft.
+- The transition pace is uneven; adoption timing varies by team, compliance constraints, and tooling maturity.
+
+---
+
+## Open Questions
+
+- Which role families in your environment are seeing measurable specification premiums today?
+- What objective metric best captures specification quality (rework rate, cycle time, defect escape)?
+- At what task complexity does "work with compute" produce net gains versus overhead?
+- How should teams split accountability between specification authorship and output validation?
 
 ---
 

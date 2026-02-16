@@ -1,6 +1,15 @@
 # Codex 5.3 vs Opus 4.6: Two Agent Philosophies
 
-Source article: Codex 5.3 vs. Opus 4.6 (Nate’s Substack, Feb 16, 2026)
+## Metadata
+
+- Source Type: article
+- Source Title: Codex 5.3 vs. Opus 4.6: Why your AI agent choice compounds faster than you think
+- Source URL: https://natesnewsletter.substack.com/p/codex-53-vs-opus-46-two-agent-philosophies
+- Author/Creator: Nate (Nate's Substack)
+- Published Date: 2026-02-16
+- Captured Date: 2026-02-16
+- Confidence: medium
+- Access mode: full text provided by user
 
 ## Core Thesis
 
@@ -9,6 +18,15 @@ This is not a benchmark race. It is a workflow architecture decision.
 - Codex represents the delegation bet: hand off work, walk away, return to finished output.
 - Claude/Opus represents the coordination bet: integrate with existing tools, coordinate multi-agent workflows.
 - The wrong choice is not picking the “worse model”; it is building organizational muscle around the wrong workflow pattern.
+
+## Evidence and Signals
+
+| Claim | Evidence | Strength | Notes |
+|-------|----------|----------|-------|
+| Delegation and coordination are distinct product philosophies | Same-day release framing with materially different operating models | High | Architectural contrast is explicit in source text |
+| Codex emphasizes autonomous correctness | Cited benchmark and long-running autonomous execution behavior | Medium | Benchmarks are indicative; real-world fit still task-dependent |
+| Claude emphasizes integration and coordination | MCP/tooling integration and agent-team coordination framing | High | Strong alignment with described workflow behavior |
+| Tool choice compounds organizationally | Hiring, workflow defaults, and switching-cost argument | Medium | Strong strategic logic; requires local measurement |
 
 ## The Two Bets
 
@@ -120,13 +138,19 @@ For each recurring workflow, record:
 - Coordination default: high interdependence + many systems + ongoing synchronization.
 - Hybrid default: delegated subtasks inside a coordinated parent workflow.
 
-## Immediate Actions
+## Action Plan
 
-1) Audit top 10 weekly workflows using the template above.
-2) Label each workflow delegation, coordination, or hybrid.
-3) Run a 2-week experiment with explicit routing rules.
-4) Track cycle time, rework, and handoff overhead.
-5) Reassign workflow/tool fit based on measured outcomes, not preference.
+### Next 7 Days
+
+- [ ] Audit top 10 weekly workflows with the routing template.
+- [ ] Label each workflow delegation, coordination, or hybrid.
+- [ ] Define 1-2 success metrics per workflow (cycle time, rework, handoff overhead).
+
+### Next 30 Days
+
+- [ ] Run a 2-week routing experiment and compare results to baseline.
+- [ ] Reassign workflow/tool fit based on measured outcomes.
+- [ ] Document organization-level patterns (where delegation wins, where coordination wins).
 
 ## Risks to Watch
 
@@ -134,6 +158,13 @@ For each recurring workflow, record:
 - Over-coordinating tasks that should be simple autonomous handoffs.
 - Treating model improvements as static rather than weekly moving targets.
 - Measuring productivity only by output volume instead of rework and reliability.
+
+## Open Questions
+
+- Where does hybrid mode outperform pure delegation or pure coordination in your actual stack?
+- Which integration points create the highest compounding value over 90 days?
+- What governance controls are required when autonomous correctness and cross-tool execution are both enabled?
+- What skill profile should you hire for first: workflow routing judgment or deep single-tool expertise?
 
 ## Bottom Line
 
