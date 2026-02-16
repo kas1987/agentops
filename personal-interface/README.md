@@ -5,9 +5,11 @@ Build a personal, queryable career interface from your profile + resume.
 ## What this includes
 
 - `app/index.html`: local UI with
-  - profile explorer
-  - Q&A helper over your profile/resume data
-  - JD fit analyzer with verdicts: `strong fit`, `worth conversation`, `probably not`
+  - clean profile landing section
+  - `Ask AI About Me` query experience
+  - experience cards with `View AI Context` narrative layer
+  - explicit skills transparency columns: Strong / Moderate / Gaps
+  - bidirectional JD fit analyzer with verdicts: `strong fit`, `worth conversation`, `probably not`
 - `data/profile.json`: profile data model to populate from LinkedIn/resume
 - `data/resume.md`: raw resume text source
 - `prompts/system-prompt.md`: anti-sycophancy prompt stack for AI-assisted mode
@@ -16,7 +18,13 @@ Build a personal, queryable career interface from your profile + resume.
 
 1. Edit `data/profile.json` with your real info.
 2. Paste your latest resume into `data/resume.md`.
-3. Open `app/index.html` in your browser.
+3. Run a local server from this folder:
+
+```bash
+python -m http.server 8000
+```
+
+4. Open `http://localhost:8000/app/`.
 
 No API key is required for the deterministic MVP analyzer.
 

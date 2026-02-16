@@ -38,6 +38,26 @@
     "Executive communication with actionable decision framing",
     "Hands-on AI and automation integration with governance"
   ],
+  "skillBands": {
+    "strong": [
+      "Executive financial management",
+      "FP&A, budgeting, and forecasting",
+      "Financial controls and compliance",
+      "Cross-functional process redesign",
+      "Stakeholder alignment and executive communication"
+    ],
+    "moderate": [
+      "Power BI reporting automation",
+      "HR systems implementation and vendor transitions",
+      "AI-assisted workflow design with governance",
+      "Project/program leadership"
+    ],
+    "gapsToDisclose": [
+      "Deep software engineering implementation",
+      "Consumer mobile product growth execution",
+      "Hands-on enterprise data engineering"
+    ]
+  },
   "certifications": [
     "Certified Public Accountant (CPA)",
     "Senior Professional in Human Resources (SPHR)",
@@ -57,7 +77,8 @@
         "Built scenario models for pricing, regulatory, and competitive risk; informed executive investment decisions",
         "Implemented Excel/Power BI reporting automation, reducing close-to-forecast cycle time by 40%",
         "Partnered with Marketing and Sales to optimize spend allocation and achieve double-digit YoY expense savings"
-      ]
+      ],
+      "aiContext": "Inherited a complex category where planning quality was constrained by fragmented assumptions across finance, marketing, and sales. Built a unified scenario framework that separated controllable spend levers from external uncertainty (regulatory and competitive). The operational win was less about spreadsheet mechanics and more about forcing cross-functional alignment on assumptions before budget cycles hardened. That shift reduced planning friction and improved decision quality while enabling reporting automation that cut close-to-forecast cycle time by 40%."
     },
     {
       "title": "Director of Finance",
@@ -69,7 +90,8 @@
         "Implemented new HRIS and transitioned to TriNet PEO, delivering $100K+ overhead savings",
         "Secured PPP funding and credits to support cash flow during COVID",
         "Established stronger banking/financing structures including line of credit and fixed loan"
-      ]
+      ],
+      "aiContext": "Joined during a turnaround period with intertwined finance, HR, and governance risks. Prioritized survivability first (cash flow, financing, control integrity), then moved to structural redesign (fee strategy, HRIS/PEO transition, banking relationships). The critical pattern was sequencing: stabilize immediate risk, then codify durable systems and ownership. Revenue increased 40%, overhead dropped by over $100K, and the organization gained stronger operating resilience through clearer controls and planning discipline."
     },
     {
       "title": "Corporate Finance & Accounting Manager",
@@ -78,7 +100,8 @@
       "highlights": [
         "Managed annual budgeting and strategic financial planning processes",
         "Supported monthly/quarterly/annual internal financial analysis and stakeholder reporting"
-      ]
+      ],
+      "aiContext": "Functioned as a planning systems integrator for FP&A rhythms. The role required connecting technical finance outputs to stakeholder comprehension across leadership layers. The most important value was converting high-complexity analysis into operating decisions, while tightening the consistency of monthly-to-annual planning flows and reducing interpretation drift in management reporting."
     },
     {
       "title": "Plant Financial Analyst",
@@ -88,7 +111,8 @@
         "Oversaw plant financial reporting consistency and internal control compliance",
         "Owned costing processes and annual standard cost campaign",
         "Partnered with operations/supply chain to identify corrective actions and cost-saving opportunities"
-      ]
+      ],
+      "aiContext": "Worked at the plant interface where finance quality depends on operational signal quality. Focused on costing governance, variance transparency, and control discipline while translating operational realities into financially usable narratives. The core contribution was reducing the lag between identifying cost/efficiency issues and triggering corrective action through better cadence and cross-functional accountability."
     }
   ],
   "education": [

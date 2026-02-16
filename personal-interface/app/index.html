@@ -3,44 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Interface Toolkit</title>
+  <title>Ask AI About Kris</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; max-width: 980px; }
-    h1, h2 { margin-bottom: 8px; }
-    .muted { color: #555; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    textarea { width: 100%; min-height: 160px; padding: 8px; }
-    input, button { padding: 8px; }
-    .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
-    .pill { display: inline-block; border: 1px solid #ccc; border-radius: 999px; padding: 4px 10px; margin: 4px 4px 0 0; font-size: 12px; }
-    .v-strong { color: #0f5132; font-weight: bold; }
-    .v-convo { color: #664d03; font-weight: bold; }
-    .v-no { color: #842029; font-weight: bold; }
+    :root {
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --bg-soft: #f8fafc;
+      --brand: #0f766e;
+      --ok: #166534;
+      --warn: #854d0e;
+      --no: #991b1b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      margin: 0;
+      color: var(--text);
+      background: white;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .meta { margin-top: 12px; display: flex; gap: 14px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+
+    .section {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background: white;
+    }
+    h2 { margin: 0 0 10px; font-size: 20px; }
+    h3 { margin: 0 0 8px; font-size: 16px; }
+    .muted { color: var(--muted); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stack { display: grid; gap: 10px; }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin: 4px 6px 0 0;
+      font-size: 12px;
+      background: var(--bg-soft);
+    }
+
+    input, textarea, button {
+      font: inherit;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    textarea { min-height: 170px; resize: vertical; }
+    button {
+      width: auto;
+      background: #0f172a;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 10px 14px;
+    }
+    button.secondary {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .qa-answer, .fit-box {
+      margin-top: 10px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-soft);
+    }
+
+    .exp-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: white;
+    }
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .exp-context {
+      margin-top: 8px;
+      padding: 10px;
+      border-left: 3px solid var(--brand);
+      background: #f0fdfa;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .col strong { display: block; margin-bottom: 6px; }
+    .col ul { margin: 0; padding-left: 18px; }
+    .col li { margin-bottom: 6px; }
+    .strong-col { background: #ecfdf5; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px; }
+    .moderate-col { background: #fefce8; border: 1px solid #fef08a; border-radius: 10px; padding: 10px; }
+    .gaps-col { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 10px; }
+
+    .v-strong { color: var(--ok); font-weight: 700; }
+    .v-convo { color: var(--warn); font-weight: 700; }
+    .v-no { color: var(--no); font-weight: 700; }
+
+    .small { font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 960px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>Personal Interface Toolkit</h1>
-  <p class="muted">Local MVP for profile exploration + job-description fit analysis.</p>
+  <div class="container">
+    <section class="hero">
+      <h1 id="name">Ask AI About Me</h1>
+      <p id="headline"></p>
+      <div class="meta" id="meta"></div>
+    </section>
 
-  <div class="card">
-    <h2>Profile</h2>
-    <div id="profile"></div>
-  </div>
+    <section class="section">
+      <h2>Professional Thesis</h2>
+      <p id="summary" class="muted"></p>
+      <div id="domains"></div>
+    </section>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Ask Profile</h2>
-      <input id="question" placeholder="Ask about skills, projects, experience" style="width:100%" />
-      <button onclick="answerQuestion()">Answer</button>
-      <p id="answer" class="muted"></p>
-    </div>
+    <section class="section">
+      <h2>Ask AI About Me</h2>
+      <p class="small">Example prompts: "How have you led finance transformation?" · "What is your AI governance approach?" · "Where are your strongest role fits?"</p>
+      <div class="stack">
+        <input id="question" placeholder="Ask a question about experience, skills, projects, or role fit" />
+        <button onclick="answerQuestion()">Answer</button>
+      </div>
+      <div class="qa-answer" id="answer">Ask a question to generate an evidence-based response.</div>
+    </section>
 
-    <div class="card">
-      <h2>JD Fit Analyzer</h2>
-      <textarea id="jd" placeholder="Paste job description"></textarea>
-      <button onclick="analyzeFit()">Analyze Fit</button>
-      <div id="fit"></div>
-    </div>
+    <section class="section">
+      <h2>Experience + AI Context</h2>
+      <p class="small">Each role includes a narrative context layer that shows how outcomes were produced, not just bullet-point claims.</p>
+      <div class="stack" id="experience"></div>
+    </section>
+
+    <section class="section">
+      <h2>Skills Transparency</h2>
+      <div class="grid-3" id="skillBands"></div>
+    </section>
+
+    <section class="section">
+      <h2>Bidirectional Fit Assessment</h2>
+      <p class="small">Paste any JD. The system can return "strong fit," "worth conversation," or an honest "probably not your person."</p>
+      <textarea id="jd" placeholder="Paste job description here"></textarea>
+      <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button onclick="analyzeFit()">Analyze Fit</button>
+      </div>
+      <div class="fit-box" id="fit">No assessment yet.</div>
+    </section>
   </div>
 
   <script>
@@ -51,123 +187,229 @@
     }
 
     function uniq(arr) {
-      return [...new Set(arr)];
+      return [...new Set(arr.filter(Boolean))];
     }
 
-    function tokenize(text) {
-      return norm(text)
-        .replace(/[^a-z0-9+.# ]/g, ' ')
-        .split(/\s+/)
-        .filter(Boolean);
+    function hasAny(text, terms) {
+      const s = norm(text);
+      return terms.some(t => s.includes(norm(t)));
     }
 
-    async function loadProfile() {
-      const res = await fetch('../data/profile.json');
-      profile = await res.json();
-      const html = `
-        <p><strong>${profile.name}</strong> — ${profile.headline}</p>
-        <p>${profile.summary}</p>
-        <div>${(profile.skills || []).map(s => `<span class="pill">${s}</span>`).join('')}</div>
+    function scoreQuestionAgainstText(question, text) {
+      const q = norm(question).split(/\s+/).filter(Boolean);
+      const t = norm(text);
+      let score = 0;
+      for (const token of q) {
+        if (token.length > 2 && t.includes(token)) score += 1;
+      }
+      return score;
+    }
+
+    function renderHero() {
+      document.getElementById('name').innerText = profile.name;
+      document.getElementById('headline').innerText = profile.headline;
+      document.getElementById('summary').innerText = profile.summary;
+      document.getElementById('meta').innerHTML = `
+        <span>${profile.location || ''}</span>
+        <span>${profile.email || ''}</span>
+        <span><a href="${profile.links?.linkedin || '#'}" target="_blank" rel="noreferrer">LinkedIn</a></span>
       `;
-      document.getElementById('profile').innerHTML = html;
+      document.getElementById('domains').innerHTML = (profile.domainFocus || [])
+        .map(x => `<span class="pill">${x}</span>`).join('');
+    }
+
+    function renderExperience() {
+      const root = document.getElementById('experience');
+      root.innerHTML = '';
+      (profile.experience || []).forEach((exp, idx) => {
+        const el = document.createElement('div');
+        el.className = 'exp-card';
+        el.innerHTML = `
+          <div class="exp-head">
+            <div>
+              <strong>${exp.title}</strong><br/>
+              <span class="small">${exp.company} · ${exp.period}</span>
+            </div>
+            <button class="secondary" onclick="toggleContext(${idx})">View AI Context</button>
+          </div>
+          <ul>${(exp.highlights || []).map(h => `<li>${h}</li>`).join('')}</ul>
+          <div id="ctx-${idx}" class="exp-context">${exp.aiContext || 'No context provided yet.'}</div>
+        `;
+        root.appendChild(el);
+      });
+    }
+
+    function renderSkillBands() {
+      const bands = profile.skillBands || {};
+      const root = document.getElementById('skillBands');
+      root.innerHTML = `
+        <div class="col strong-col">
+          <strong>Strong</strong>
+          <ul>${(bands.strong || []).map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="col moderate-col">
+          <strong>Moderate</strong>
+          <ul>${(bands.moderate || []).map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="col gaps-col">
+          <strong>Gaps I’ll Tell You About</strong>
+          <ul>${(bands.gapsToDisclose || []).map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+      `;
+    }
+
+    function toggleContext(idx) {
+      const el = document.getElementById(`ctx-${idx}`);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
     }
 
     function answerQuestion() {
-      const q = norm(document.getElementById('question').value);
-      if (!q || !profile) return;
-
-      const hits = [];
-
-      for (const skill of (profile.skills || [])) {
-        if (q.includes(norm(skill))) hits.push(`Skill match: ${skill}`);
-      }
-
-      for (const exp of (profile.experience || [])) {
-        if (q.includes(norm(exp.title)) || q.includes(norm(exp.company))) {
-          hits.push(`${exp.title} at ${exp.company}: ${(exp.highlights || []).join('; ')}`);
-        }
-      }
-
-      for (const project of (profile.projects || [])) {
-        if (q.includes(norm(project.name)) || q.includes(norm(project.description))) {
-          hits.push(`${project.name}: ${project.impact}`);
-        }
-      }
-
-      if (hits.length === 0) {
-        document.getElementById('answer').innerText =
-          'No direct match found. Try asking about specific skills, roles, companies, or projects from your profile.';
+      const q = document.getElementById('question').value.trim();
+      const out = document.getElementById('answer');
+      if (!q || !profile) {
+        out.innerText = 'Please enter a question.';
         return;
       }
 
-      document.getElementById('answer').innerText = uniq(hits).slice(0, 5).join(' | ');
+      const candidates = [];
+
+      candidates.push({
+        kind: 'summary',
+        text: profile.summary,
+        evidence: 'Profile summary'
+      });
+
+      for (const exp of (profile.experience || [])) {
+        const composed = `${exp.title} ${exp.company} ${(exp.highlights || []).join(' ')} ${exp.aiContext || ''}`;
+        candidates.push({
+          kind: 'experience',
+          text: composed,
+          evidence: `${exp.title} @ ${exp.company}`
+        });
+      }
+
+      for (const proj of (profile.projects || [])) {
+        const composed = `${proj.name} ${proj.description} ${proj.impact} ${(proj.stack || []).join(' ')}`;
+        candidates.push({
+          kind: 'project',
+          text: composed,
+          evidence: `Project: ${proj.name}`
+        });
+      }
+
+      const ranked = candidates
+        .map(c => ({ ...c, score: scoreQuestionAgainstText(q, c.text) }))
+        .sort((a, b) => b.score - a.score);
+
+      const top = ranked.filter(x => x.score > 0).slice(0, 3);
+      if (top.length === 0) {
+        out.innerText = 'I do not have enough direct evidence for that question yet. Ask about finance transformation, workflow redesign, AI governance, or specific roles.';
+        return;
+      }
+
+      const combined = top.map(x => x.text).join(' ');
+      const concise = combined.split('. ').slice(0, 4).join('. ').trim();
+      const evidence = top.map(x => x.evidence).join(' | ');
+
+      out.innerHTML = `
+        <p>${concise.endsWith('.') ? concise : `${concise}.`}</p>
+        <p class="small"><strong>Evidence used:</strong> ${evidence}</p>
+      `;
     }
 
     function analyzeFit() {
-      const jd = document.getElementById('jd').value || '';
-      const jdTokens = tokenize(jd);
-
-      const skillSet = new Set((profile.skills || []).map(norm));
-      const domainSet = new Set((profile.domainFocus || []).map(norm));
-      const gapSet = new Set((profile.knownGaps || []).map(norm));
-
-      let score = 0;
-      const strengths = [];
-      const gaps = [];
+      const jd = document.getElementById('jd').value.trim();
+      const fit = document.getElementById('fit');
+      if (!jd) {
+        fit.innerText = 'Paste a job description first.';
+        return;
+      }
 
       const jdText = norm(jd);
+      const strong = (profile.skillBands?.strong || []).map(norm);
+      const moderate = (profile.skillBands?.moderate || []).map(norm);
+      const gaps = (profile.skillBands?.gapsToDisclose || []).map(norm);
+      const domains = (profile.domainFocus || []).map(norm);
 
-      for (const skill of skillSet) {
-        if (jdText.includes(skill)) {
-          score += 7;
-          strengths.push(skill);
-        }
-      }
+      let score = 0;
+      const strengthHits = [];
+      const moderateHits = [];
+      const gapHits = [];
+      const domainHits = [];
 
-      for (const domain of domainSet) {
-        if (jdText.includes(domain)) {
+      for (const s of strong) {
+        if (jdText.includes(s)) {
           score += 10;
-          strengths.push(`domain:${domain}`);
+          strengthHits.push(s);
+        }
+      }
+      for (const s of moderate) {
+        if (jdText.includes(s)) {
+          score += 6;
+          moderateHits.push(s);
+        }
+      }
+      for (const d of domains) {
+        if (jdText.includes(d)) {
+          score += 8;
+          domainHits.push(d);
+        }
+      }
+      for (const g of gaps) {
+        if (jdText.includes(g)) {
+          score -= 18;
+          gapHits.push(g);
         }
       }
 
-      for (const gap of gapSet) {
-        if (jdText.includes(gap)) {
-          score -= 12;
-          gaps.push(gap);
-        }
-      }
-
-      const mustHaveSignals = ['required', 'must have', 'minimum qualifications'];
-      const hasStrictReq = mustHaveSignals.some(s => jdText.includes(s));
-      if (hasStrictReq && strengths.length < 3) score -= 10;
+      const strictSignals = ['required', 'must have', 'minimum qualifications', 'non-negotiable'];
+      const strict = hasAny(jdText, strictSignals);
+      const evidenceCount = strengthHits.length + moderateHits.length + domainHits.length;
+      if (strict && evidenceCount < 3) score -= 14;
 
       score = Math.max(0, Math.min(100, score));
 
       let verdict = 'probably not';
-      let verdictClass = 'v-no';
+      let css = 'v-no';
       let action = 'do not proceed';
+      let headline = 'Honest Assessment: Probably Not Your Person';
 
       if (score >= 80) {
         verdict = 'strong fit';
-        verdictClass = 'v-strong';
+        css = 'v-strong';
         action = 'apply';
+        headline = 'Strong Fit';
       } else if (score >= 55) {
         verdict = 'worth conversation';
-        verdictClass = 'v-convo';
+        css = 'v-convo';
         action = 'intro call only';
+        headline = 'Worth Conversation';
       }
 
-      const confidence = strengths.length >= 4 ? 'high' : strengths.length >= 2 ? 'medium' : 'low';
+      const confidence = evidenceCount >= 5 ? 'high' : evidenceCount >= 3 ? 'medium' : 'low';
+      const alternate = (profile.domainFocus || []).slice(0, 3).join(', ');
 
-      document.getElementById('fit').innerHTML = `
-        <p>Score: <strong>${score}</strong></p>
-        <p>Verdict: <span class="${verdictClass}">${verdict}</span></p>
-        <p>Confidence: <strong>${confidence}</strong></p>
+      fit.innerHTML = `
+        <p><strong>${headline}</strong></p>
+        <p>Verdict: <span class="${css}">${verdict}</span> · Score: <strong>${score}</strong> · Confidence: <strong>${confidence}</strong></p>
         <p>Recommended action: <strong>${action}</strong></p>
-        <p><strong>Strength signals:</strong> ${uniq(strengths).slice(0, 8).join(', ') || 'none detected'}</p>
-        <p><strong>Gap signals:</strong> ${uniq(gaps).slice(0, 8).join(', ') || 'none detected'}</p>
+        <p><strong>Strong evidence:</strong> ${uniq(strengthHits).join(', ') || 'none'}</p>
+        <p><strong>Transferable evidence:</strong> ${uniq(moderateHits.concat(domainHits)).join(', ') || 'none'}</p>
+        <p><strong>Potential mismatch:</strong> ${uniq(gapHits).join(', ') || 'none detected'}</p>
+        ${verdict === 'probably not' ? `<p class="small">Better-fit lanes to explore: ${alternate}</p>` : ''}
       `;
+    }
+
+    async function loadProfile() {
+      try {
+        const res = await fetch('../data/profile.json');
+        profile = await res.json();
+        renderHero();
+        renderExperience();
+        renderSkillBands();
+      } catch (err) {
+        document.body.innerHTML = `<div class="container"><p>Could not load profile data. Start a local server from the personal-interface folder and reopen this page.</p></div>`;
+      }
     }
 
     loadProfile();
