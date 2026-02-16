@@ -1,52 +1,131 @@
 {
-  "name": "Kris S",
-  "headline": "Add your LinkedIn headline here",
-  "location": "Add location",
-  "email": "optional@email.com",
+  "name": "Kris Sayresmith, CPA, SPHR",
+  "headline": "Strategic Ops & Finance Transformation Leader | Systems + AI Integration | Process & Workflow Redesign | CPA, SPHR",
+  "location": "Winston-Salem, North Carolina, United States",
+  "email": "kas41866@gmail.com",
+  "phone": "7046041678",
   "links": {
     "linkedin": "https://www.linkedin.com/in/kris-s-b8a5869/",
     "portfolio": "",
     "github": ""
   },
-  "summary": "Paste a concise professional summary here.",
+  "summary": "Cross-functional systems architect operating at the intersection of finance, operations, HR, technology, and AI-driven automation. Specializes in stabilizing broken processes, clarifying ownership, redesigning workflows, and building governance guardrails so system failures do not recur.",
   "domainFocus": [
-    "platform",
-    "ai workflows",
-    "automation"
+    "finance transformation",
+    "operations workflow redesign",
+    "hr and people operations",
+    "ai-assisted process automation",
+    "cross-functional systems integration"
   ],
   "skills": [
-    "python",
-    "sql",
-    "prompt engineering",
-    "project management",
-    "data analysis"
+    "executive financial management",
+    "working capital management",
+    "cash flow management",
+    "fp&a",
+    "budgeting and forecasting",
+    "financial controls",
+    "power bi",
+    "excel automation",
+    "hris implementation",
+    "process redesign",
+    "ai workflow governance",
+    "project management"
   ],
   "strengths": [
-    "List 3-5 proven strengths",
-    "Evidence-backed delivery",
-    "Cross-functional communication"
+    "Cross-functional translator between finance, ops, HR, IT, and leadership",
+    "Turnaround and stabilization in high-complexity environments",
+    "Workflow/system redesign to reduce rework and recurring errors",
+    "Executive communication with actionable decision framing",
+    "Hands-on AI and automation integration with governance"
+  ],
+  "certifications": [
+    "Certified Public Accountant (CPA)",
+    "Senior Professional in Human Resources (SPHR)",
+    "Project Management Professional (PMP)",
+    "Yellow Belt"
   ],
   "knownGaps": [
-    "List honest gaps you want to disclose"
+    "Domain-specific gaps should be tailored per target role in fit analysis"
   ],
   "experience": [
     {
-      "title": "Role Title",
-      "company": "Company",
-      "period": "YYYY-YYYY",
+      "title": "Senior Finance Manager",
+      "company": "Reynolds American Inc.",
+      "period": "2023-Present",
       "highlights": [
-        "Outcome with metric",
-        "System/process built",
-        "Complex problem solved"
+        "Directed $90M brand P&L with forecasting and long-range planning for Vapor category",
+        "Built scenario models for pricing, regulatory, and competitive risk; informed executive investment decisions",
+        "Implemented Excel/Power BI reporting automation, reducing close-to-forecast cycle time by 40%",
+        "Partnered with Marketing and Sales to optimize spend allocation and achieve double-digit YoY expense savings"
       ]
+    },
+    {
+      "title": "Director of Finance",
+      "company": "National Board of Examiners in Optometry",
+      "period": "2019-2022",
+      "highlights": [
+        "Led finance and HR operations for ~$7M revenue organization with ~50 employees",
+        "Delivered exam fee strategy that increased revenue by 40%",
+        "Implemented new HRIS and transitioned to TriNet PEO, delivering $100K+ overhead savings",
+        "Secured PPP funding and credits to support cash flow during COVID",
+        "Established stronger banking/financing structures including line of credit and fixed loan"
+      ]
+    },
+    {
+      "title": "Corporate Finance & Accounting Manager",
+      "company": "Glatfelter",
+      "period": "2022-2023",
+      "highlights": [
+        "Managed annual budgeting and strategic financial planning processes",
+        "Supported monthly/quarterly/annual internal financial analysis and stakeholder reporting"
+      ]
+    },
+    {
+      "title": "Plant Financial Analyst",
+      "company": "Sealed Air Corporation",
+      "period": "2017-2019",
+      "highlights": [
+        "Oversaw plant financial reporting consistency and internal control compliance",
+        "Owned costing processes and annual standard cost campaign",
+        "Partnered with operations/supply chain to identify corrective actions and cost-saving opportunities"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of North Carolina Wilmington",
+      "degree": "Master of Science (MS), Accounting",
+      "year": "2010"
+    },
+    {
+      "institution": "University of North Carolina Wilmington",
+      "degree": "Bachelor of Science (BS), Business Administration",
+      "year": "2008"
     }
   ],
   "projects": [
     {
-      "name": "Project name",
-      "description": "What it does",
-      "impact": "Measured impact",
-      "stack": ["tool1", "tool2"]
+      "name": "Finance Workflow Automation",
+      "description": "Automated close/reporting workflows with Excel and Power BI for faster planning cycles.",
+      "impact": "Reduced close-to-forecast cycle time by 40%.",
+      "stack": ["Excel", "Power BI", "financial reporting automation"]
+    },
+    {
+      "name": "HRIS + PEO Transition",
+      "description": "Implemented HRIS and moved to new PEO model with improved cost structure and growth capacity.",
+      "impact": "$100K+ overhead savings and increased payroll growth capacity.",
+      "stack": ["HRIS", "PEO migration", "process redesign"]
+    },
+    {
+      "name": "AI-Assisted Workflow Validation",
+      "description": "Built multi-stage validation scaffolding from dev to enterprise for AI-assisted processes.",
+      "impact": "Improved governance and reduced risk of downstream finance/ops errors.",
+      "stack": ["AI workflows", "governance controls", "validation gates"]
     }
-  ]
+  ],
+  "source": {
+    "origin": "c:\\.07_Job\\.01_Files\\Profile (1).pdf",
+    "extractedText": "c:\\.07_Job\\.01_Files\\Profile (1).txt",
+    "capturedDate": "2026-02-16"
+  }
 }
