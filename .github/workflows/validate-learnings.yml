@@ -1,0 +1,31 @@
+name: Validate Learnings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/learnings/**
+      - docs/templates/learning.template.md
+      - docs/INDEX.md
+      - scripts/validate-learnings.sh
+      - .github/workflows/validate-learnings.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - docs/learnings/**
+      - docs/templates/learning.template.md
+      - docs/INDEX.md
+      - scripts/validate-learnings.sh
+      - .github/workflows/validate-learnings.yml
+  workflow_dispatch:
+
+jobs:
+  learnings-validation:
+    name: Learnings Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Validate learnings docs
+        run: |
+          bash ./scripts/validate-learnings.sh
