@@ -135,12 +135,14 @@
 ## Learnings
 
 - [Learnings Index](learnings/README.md) — Curated learnings from videos and external analysis
+- [Learnings Quality Checklist](learnings/CHECKLIST.md) — Quality gate for source-backed, actionable notes
 - [Job Market Split: Production to Specification Bottleneck](learnings/job-market-split-specification-bottleneck.md) — Why specification skill compounds as the core differentiator
 - [Codex 5.3 vs Opus 4.6: Two Agent Philosophies](learnings/codex-53-vs-opus-46-two-agent-philosophies.md) — Delegation vs coordination and workflow-fit decision framework
 
 ## Templates
 
 - [Workflow Template](templates/workflow.template.md) — Template for new workflows
+- [Learning Template](templates/learning.template.md) — Template for source-based learning captures
 - [Agent Template](templates/agent.template.md) — Template for new agents
 - [Skill Template](templates/skill.template.md) — Template for new skills
 - [Command Template](templates/command.template.md) — Template for new commands
