@@ -31,4 +31,5 @@ Curated learnings captured from external research, videos, and long-form analysi
 2. Fill source metadata and extract key claims with evidence.
 3. Add decision rules and an action plan.
 4. Run the [Learnings Quality Checklist](CHECKLIST.md).
-5. Add the new entry to this index and commit.
+5. Run `./scripts/validate-learnings.sh` from repo root.
+6. Add the new entry to this index and commit.

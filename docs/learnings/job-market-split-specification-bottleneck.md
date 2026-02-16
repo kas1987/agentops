@@ -281,6 +281,18 @@ The 10-80x gap is forming. The earlier you move, the more advantage you gain.
 
 ---
 
+## Decision Rules
+
+Use these rules to route work and capability-building focus.
+
+1. If task rework is high, improve specification quality before increasing production throughput.
+2. If AI output is fast but wrong, tighten outcomes, constraints, and acceptance criteria.
+3. If coordination load is growing, redesign the workflow as a system with explicit dependencies.
+4. If role value is unclear, measure contribution to problem framing and specification clarity.
+5. If in J-curve trough, optimize for learning velocity rather than short-term output volume.
+
+---
+
 ## Next Steps
 
 ### Immediate Actions

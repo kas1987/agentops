@@ -124,7 +124,21 @@ else
 fi
 echo ""
 
-# 7. Test actual load with Claude CLI (if available)
+# 7. Learnings docs validation
+echo "── Learnings ──"
+if [[ -f "scripts/validate-learnings.sh" ]]; then
+    if learnings_output=$(bash ./scripts/validate-learnings.sh 2>&1); then
+        pass "Learnings docs validation passed"
+    else
+        fail "Learnings docs validation failed"
+        echo "$learnings_output" | sed 's/^/    /'
+    fi
+else
+    fail "Missing script: scripts/validate-learnings.sh"
+fi
+echo ""
+
+# 8. Test actual load with Claude CLI (if available)
 echo "── Claude CLI ──"
 if command -v claude &>/dev/null; then
     load_output=$(timeout 10 claude --plugin-dir . --help 2>&1) || true
