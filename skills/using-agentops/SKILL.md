@@ -104,6 +104,11 @@ Research → Plan → Implement → Validate
 | `/provenance` | Trace artifact lineage to sources |
 | `/release` | Pre-flight, changelog, version bumps, tag |
 | `/trace` | Trace design decisions through history |
+| `/tabby` | Tabby terminal workspace layout and pane-role orchestration |
+| `/operating-model` | Build Excel operating models with assumptions and scenarios |
+| `/board-deck` | Build board-ready PowerPoint decks from data |
+| `/slop-filter` | Detect and fix low-substance AI output before sharing |
+| `/judgment` | Decide what is worth building before execution |
 
 ## Knowledge Flywheel
 
@@ -128,6 +133,11 @@ Skills auto-trigger from conversation:
 | "Where did this learning come from?" | `/provenance` |
 | "Cut a release" | `/release` |
 | "Are we ready to release?" | `/release --check` |
+| "Set up a split terminal workspace" | `/tabby` |
+| "Build an operating model in Excel" | `/operating-model` |
+| "Turn this analysis into a board deck" | `/board-deck` |
+| "Check this for AI slop" | `/slop-filter` |
+| "What should we build first?" | `/judgment` |
 
 ## Issue Tracking
 
