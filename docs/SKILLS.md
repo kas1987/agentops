@@ -1,6 +1,6 @@
 # Skills Reference
 
-Complete reference for all 36 AgentOps skills (26 user-facing + 10 internal).
+Complete reference for all 41 AgentOps skills (31 user-facing + 10 internal).
 
 **Behavioral Contracts:** All 36 skills have `scripts/validate.sh` with behavioral checks that verify key features remain documented. Run `skills/<name>/scripts/validate.sh` to validate any skill, or the GOALS.yaml `behavioral-skill-contracts` goal to validate all at once.
 
@@ -227,6 +227,56 @@ Trace design decisions through knowledge artifacts.
 ```bash
 /trace "why did we choose Redis?"
 ```
+
+### /tabby
+
+Tabby workspace orchestration for AgentOps. Defines pane-role mappings so Research-Plan-Implement-Validate phases run with consistent terminal context.
+
+```bash
+/tabby "set up full RPI workspace for auth refactor"
+```
+
+**Focus:** split layouts, pane ownership, hybrid WSL execution conventions
+
+### /operating-model
+
+Build production-ready Excel operating models with linked assumptions, scenarios, cash flow, and sensitivity analysis.
+
+```bash
+/operating-model "SaaS planning model for next 8 quarters"
+```
+
+**Focus:** assumptions discipline, linked formulas, scenario toggles
+
+### /board-deck
+
+Generate board-ready PowerPoint decks from Excel-backed analysis with clear decision narrative and editable native charts.
+
+```bash
+/board-deck "Q2 board update from latest model"
+```
+
+**Focus:** story arc, data-backed claims, template fidelity
+
+### /slop-filter
+
+Audit AI-generated output for weak substance ("workslop") before sharing externally.
+
+```bash
+/slop-filter "review this investor deck draft"
+```
+
+**Output:** PASS/FAIL verdict, concrete defects, and 3 high-impact fixes
+
+### /judgment
+
+Clarify what should be built before execution so output serves a real decision.
+
+```bash
+/judgment "Do we need a full model or just a decision brief?"
+```
+
+**Focus:** decision target, alternatives, minimum useful output
 
 ### /recover
 

@@ -13,6 +13,7 @@
 
 - [How It Works](how-it-works.md) — Brownian Ratchet, Ralph Loops, agent backends, hooks, context windowing
 - [Architecture](ARCHITECTURE.md) — System design and component overview
+- [Control-Plane Workstream Routing](../../../.control-plane/docs/workstream-routing.md) — Lane-based routing rules aligned to canonical skill profile
 - [AO-Olympus Ownership Matrix](architecture/ao-olympus-ownership-matrix.md) — Responsibility split for skills, runtime, and bridge contracts
 - [PDC Framework](architecture/pdc-framework.md) — Prevent, Detect, Correct quality control approach
 - [FAAFO Alignment](architecture/faafo-alignment.md) — FAAFO promise framework for vibe coding value
@@ -27,25 +28,26 @@
 
 ## Workflows
 
-- [Workflow Guide](workflows/README.md) — Decision matrix for choosing the right workflow
-- [Complete Cycle](workflows/complete-cycle.md) — Full Research, Plan, Implement, Validate, Learn workflow
-- [Session Lifecycle](workflows/session-lifecycle.md) — Complete guide to working with Claude across sessions
-- [Quick Fix](workflows/quick-fix.md) — Fast implementation for simple, low-risk changes
-- [Debug Cycle](workflows/debug-cycle.md) — Systematic debugging from symptoms to root cause to fix
-- [Knowledge Synthesis](workflows/knowledge-synthesis.md) — Extract and synthesize knowledge from multiple sources
-- [Assumption Validation](workflows/assumption-validation.md) — Validate research assumptions before planning
-- [Post-Work Retro](workflows/post-work-retro.md) — Systematic retrospective after completing work
-- [Multi-Domain](workflows/multi-domain.md) — Coordinate work spanning multiple domains
-- [Continuous Improvement](workflows/continuous-improvement.md) — Ongoing system optimization and pattern refinement
-- [Infrastructure Deployment](workflows/infrastructure-deployment.md) — Orchestrate deployment with validation gates
-- [Meta-Observer Pattern](workflows/meta-observer-pattern.md) — Autonomous multi-session coordination
+- [Workflow Guide](../../../.control-plane/workflows/README.md) — Decision matrix for choosing the right workflow
+- [Complete Cycle](../../../.control-plane/workflows/complete-cycle.md) — Full Research, Plan, Implement, Validate, Learn workflow
+- [Session Lifecycle](../../../.control-plane/workflows/session-lifecycle.md) — Complete guide to working with Claude across sessions
+- [Quick Fix](../../../.control-plane/workflows/quick-fix.md) — Fast implementation for simple, low-risk changes
+- [Debug Cycle](../../../.control-plane/workflows/debug-cycle.md) — Systematic debugging from symptoms to root cause to fix
+- [Knowledge Synthesis](../../../.control-plane/workflows/knowledge-synthesis.md) — Extract and synthesize knowledge from multiple sources
+- [Assumption Validation](../../../.control-plane/workflows/assumption-validation.md) — Validate research assumptions before planning
+- [Post-Work Retro](../../../.control-plane/workflows/post-work-retro.md) — Systematic retrospective after completing work
+- [Multi-Domain](../../../.control-plane/workflows/multi-domain.md) — Coordinate work spanning multiple domains
+- [Continuous Improvement](../../../.control-plane/workflows/continuous-improvement.md) — Ongoing system optimization and pattern refinement
+- [Infrastructure Deployment](../../../.control-plane/workflows/infrastructure-deployment.md) — Orchestrate deployment with validation gates
+- [Meta-Observer Pattern](../../../.control-plane/workflows/meta-observer-pattern.md) — Autonomous multi-session coordination
+- [TabbySpaces Integration](../../../.control-plane/workflows/tabbyspaces-integration.md) — Run AgentOps workflows in Tabby split-layout workspaces
 
 ### Meta-Observer
 
-- [Meta-Observer README](workflows/meta-observer/README.md) — Complete workflow package overview
-- [Pattern Guide](workflows/meta-observer/pattern-guide.md) — Autonomous multi-session coordination guide
-- [Example Session](workflows/meta-observer/example-today.md) — Real example from 2025-11-09
-- [Showcase](workflows/meta-observer/SHOWCASE.md) — Distributed intelligence for multi-session work
+- [Meta-Observer README](../../../.control-plane/workflows/meta-observer/README.md) — Complete workflow package overview
+- [Pattern Guide](../../../.control-plane/workflows/meta-observer/pattern-guide.md) — Autonomous multi-session coordination guide
+- [Example Session](../../../.control-plane/workflows/meta-observer/example-today.md) — Real example from 2025-11-09
+- [Showcase](../../../.control-plane/workflows/meta-observer/SHOWCASE.md) — Distributed intelligence for multi-session work
 
 ## Concepts
 
@@ -108,11 +110,19 @@
 ## Profiles
 
 - [Profiles Overview](profiles/README.md) — Role-based profile organization
+- [Canonical Skill Profile](../../../.control-plane/profiles/canonical-skill-profile.md) — Merged known skillsets with evidence and confidence ratings
 - [Profile Comparison](profiles/COMPARISON.md) — Workspace profiles vs 12-Factor examples
 - [Meta-Patterns](profiles/META_PATTERNS.md) — Patterns extracted from role-based taxonomy
 - [Example: Software Dev](profiles/examples/software-dev-session.md) — Software development session
 - [Example: Platform Ops](profiles/examples/platform-ops-session.md) — Platform operations session
 - [Example: Content Creation](profiles/examples/content-creation-session.md) — Content creation session
+
+## Control Plane
+
+- [Skills Registry Inventory](../../../.control-plane/docs/skills-registry-inventory.md) — Current skill coverage snapshot from SQLite registry sync
+- [Validation Health Report](../../../.control-plane/docs/validation-health-report.md) — Registry-backed quality metrics and gap review
+- [Skills Capability Map](../../../.control-plane/docs/skills-capability-map.md) — Skill stack mapped to business outcomes and lanes
+- [Operating Model to Board Deck Playbook](../../../.control-plane/docs/operating-model-to-board-deck-playbook.md) — End-to-end decision-output workflow
 
 ## Comparisons
 
